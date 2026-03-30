@@ -1,0 +1,144 @@
+/* ── Whispy CV — Global Reset & Base Styles ────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #111827;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #111827;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  min-height: 100svh;
+}
+
+h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
+p { margin: 0; }
+button { font-family: inherit; }
+
+/* ── Interactive button states ─────────────────────────────────────── */
+.wcv-btn-primary {
+  transition: opacity 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.wcv-btn-primary:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+.wcv-btn-primary:active:not(:disabled) {
+  opacity: 0.96;
+  transform: translateY(0);
+}
+.wcv-btn-ghost {
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.wcv-btn-ghost:hover {
+  border-color: #9ca3af !important;
+  background: #f9fafb !important;
+}
+
+/* ── Responsive breakpoints ────────────────────────────────────────── */
+
+/* Tablet / small desktop ≤ 1020px */
+@media (max-width: 1020px) {
+  .hero-two-col {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding-bottom: 64px !important;
+  }
+  .hero-preview-col {
+    display: none !important;
+  }
+  .hero-left-col {
+    padding-bottom: 0 !important;
+  }
+  .builder-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .builder-preview-col {
+    position: static !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    order: -1;
+    border-bottom: 1px solid #e5e7eb;
+    /* reset per-column radius when stacked */
+    border-radius: 14px 14px 0 0 !important;
+  }
+  .builder-form-col {
+    max-height: none !important;
+    /* reset per-column radius when stacked */
+    border-radius: 0 0 14px 14px !important;
+  }
+}
+
+/* Medium screens ≤ 860px */
+@media (max-width: 860px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Mobile ≤ 680px */
+@media (max-width: 680px) {
+  .hero-two-col {
+    text-align: center !important;
+    align-items: center !important;
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+  .hero-cta-group {
+    align-items: center !important;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .steps-connector {
+    display: none !important;
+  }
+  .benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .pricing-two-col {
+    flex-direction: column !important;
+  }
+  .faq-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .nav-cta-text {
+    display: none !important;
+  }
+  .footer-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+  .footer-links {
+    flex-wrap: wrap !important;
+    gap: 8px 16px !important;
+  }
+  .mobile-cta-bar {
+    display: flex !important;
+  }
+  /* Bottom padding so sticky bar doesn't cover content */
+  body { padding-bottom: 68px; }
+}
